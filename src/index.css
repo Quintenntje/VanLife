@@ -1,14 +1,146 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+* {
+  box-sizing: border-box;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff7ed;
+  font-family: "Inter", sans-serif;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+header {
+  height: 6.875rem;
+  display: flex;
+  align-items: center;
+  padding-block: 0.625rem;
+}
+
+header .site-logo {
+  color: black;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.5625rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 600;
+  padding: 0.3125rem 1.25rem;
+}
+
+header a:hover {
+  color: #161616;
+  text-decoration: underline;
+}
+
+.link-button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  padding: 0.75rem 1.375rem;
+  color: initial;
+  font-weight: 700;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.link-button:hover {
+  transform: translate(0.0625rem, 0.0625rem);
+}
+
+/*** HOME PAGE ***/
+.home-container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
+    url("./assets/images/home-hero.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 21.875rem;
+  color: white;
+  padding: 2.8125rem 1.4375rem;
+}
+
+.home-container h1 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+}
+
+.home-container p {
+  line-height: 1.5rem;
+}
+
+.home-container a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ff8c38;
+  border: none;
+  width: 100%;
+  margin-top: 1.6875rem;
+  padding-block: 0.75rem;
+  color: white;
+  font-weight: 700;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.home-container a:hover {
+  transform: translate(0.0625rem, 0.0625rem);
+}
+
+/*** ABOUT PAGE ***/
+.about-hero-image {
+  max-width: 100%;
+}
+
+.about-page-content {
+  padding-inline: 1.4375rem;
+  color: #161616;
+  margin-bottom: 3.4375rem;
+}
+
+.about-page-content h1 {
+  line-height: 2.375rem;
+}
+
+.about-page-content p {
+  line-height: 1.375rem;
+}
+
+.about-page-cta {
+  background-color: #ffcc8d;
+  color: #161616;
+  padding-inline: 2rem;
+  padding-bottom: 2rem;
+  margin-inline: 1.6875rem;
+  border-radius: 0.3125rem;
+}
+
+.about-page-cta h2 {
+  margin: 0;
+  padding-block: 2.3125rem;
+}
+
+.about-page-cta .link-button {
+  background-color: #161616;
+  color: white;
+  border-radius: 0.625rem;
 }
