@@ -122,3 +122,49 @@ body {
   color: white;
   border-radius: 0.625rem;
 }
+
+@media (min-width: 768px) {
+  .home-container {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .home-container h1 {
+    font-size: 2.75rem;
+    line-height: 3rem;
+  }
+
+  .home-container a {
+    max-width: 400px;
+  }
+
+  .about-page-content {
+    padding-inline: 2.5rem;
+  }
+
+  .about-page-cta {
+    margin-inline: 2.5rem;
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-container {
+    padding: 4rem 5rem;
+  }
+
+  .home-container h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+
+  .about-page-content {
+    padding-inline: 5rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .about-page-cta {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+}
