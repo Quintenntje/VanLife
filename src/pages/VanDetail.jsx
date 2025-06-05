@@ -9,14 +9,14 @@ export default function VanDetail() {
   React.useEffect(() => {
     fetch(`/api/vans/${id}`)
       .then((res) => res.json())
-      .then((data) => setVan(data.van))
+      .then((data) => setVan(data.vans))
       .catch((error) => console.error("Error fetching van details:", error));
   }, [id]);
 
   return (
     <div>
       {van ? (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col">
           <img
             className="rounded-xl w-full max-w-md"
             src={van.imageUrl}
