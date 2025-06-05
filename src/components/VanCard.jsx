@@ -1,5 +1,5 @@
 import React from "react";
-import "./Tag";
+import Tag from "./Tag";
 export default function VanCard({ van }) {
   return (
     <article >

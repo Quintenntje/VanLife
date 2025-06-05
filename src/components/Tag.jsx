@@ -4,7 +4,7 @@ export default function Tag({ children, isActive }) {
 
   let activeClass = "";
   const tagClass = (() => {
-    switch (children.toLowerCase()) {
+    switch (children.ToLowerCase()) {
       case "simple":
         isActive ? (activeClass = "bg-gray-100 text-gray-800") : "";
         return "hover:bg-gray-100 hover:text-gray-800";
