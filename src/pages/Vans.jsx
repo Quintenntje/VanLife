@@ -1,8 +1,10 @@
 import React from "react";
 import VanCard from "../components/VanCard";
 import SubpageTitle from "../components/titles/SubpageTitle";
+import { Link } from "react-router-dom";
 
 export default function Vans() {
+
   const [vans, setVans] = React.useState([]);
   React.useEffect(() => {
     fetch("/api/vans")
@@ -10,7 +12,7 @@ export default function Vans() {
       .then((data) => setVans(data.vans));
   }, []);
 
-  const vanElements = vans.map((van) => <VanCard key={van.id} van={van} />);
+  const vanElements = vans.map((van) => <Link to={`/vans/${van.id}`}> <VanCard key={van.id} van={van} /> </Link>);
   return (
     <>
       <SubpageTitle>Explore our van options</SubpageTitle>
