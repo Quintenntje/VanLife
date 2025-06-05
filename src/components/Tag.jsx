@@ -1,6 +1,6 @@
 export default function Tag({ children, isActive }) {
   const defaultClasses =
-    "inline-flex items-center rounded-full px-2.5 py-0.5 text-sm font-medium";
+    "inline-flex items-center rounded-lg px-3 py-1 text-lg font-medium";
 
   let activeClass = "";
   const tagClass = (() => {
