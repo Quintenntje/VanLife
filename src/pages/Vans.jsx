@@ -1,5 +1,6 @@
 import React from "react";
 import VanCard from "../components/VanCard";
+import SubpageTitle from "../components/SubpageTitle";
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
@@ -12,7 +13,7 @@ export default function Vans() {
   const vanElements = vans.map((van) => <VanCard key={van.id} van={van} />);
   return (
     <>
-      <h1>Expore our vans</h1>
+      <SubpageTitle>Explore our van options</SubpageTitle>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {vanElements}
