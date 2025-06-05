@@ -1,5 +1,5 @@
 export default function Vans(){
     return (
-        <h1>Vans page</h1>
+        <h1>Expore our vans</h1>
     )
 }
