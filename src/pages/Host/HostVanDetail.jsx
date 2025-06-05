@@ -1,6 +1,8 @@
 import useHostVan from "../../hooks/useHostVan";
 import { useParams } from "react-router-dom";
 import Tag from "../../components/Tag";
+import HostDetailsNavbar from "../../components/navbar/HostDetailsNavbar.Jsx";
+
 
 export default function HostVanDetail() {
   const { id } = useParams();
@@ -24,7 +26,10 @@ export default function HostVanDetail() {
               <p className="text-gray-600 mb-4">Price: ${van.price}/day</p>
             </div>
           </div>
+          <HostDetailsNavbar />
+          
         </>
+
       )}
     </div>
   );
