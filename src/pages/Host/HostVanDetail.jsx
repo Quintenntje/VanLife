@@ -1,8 +1,7 @@
 import useHostVan from "../../hooks/useHostVan";
-import { useParams } from "react-router-dom";
+import { useParams, Outlet } from "react-router-dom";
 import Tag from "../../components/Tag";
 import HostDetailsNavbar from "../../components/navbar/HostDetailsNavbar.Jsx";
-
 
 export default function HostVanDetail() {
   const { id } = useParams();
@@ -27,9 +26,11 @@ export default function HostVanDetail() {
             </div>
           </div>
           <HostDetailsNavbar />
-          
-        </>
 
+          <div className="mt-6">
+           <Outlet context={van}></Outlet> 
+          </div>
+        </>
       )}
     </div>
   );

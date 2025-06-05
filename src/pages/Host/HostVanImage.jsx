@@ -1,5 +1,11 @@
+import { useOutletContext } from "react-router-dom";
 export default function HostVanImage() {
-    return (
-        <h2>Image</h2>
-    );
+  const van = useOutletContext();
+  return (
+    <img
+      className="rounded-2xl w-32 h-auto"
+      src={van.imageUrl}
+      alt={van.name}
+    />
+  );
 }
