@@ -13,7 +13,7 @@ export default function useVan(id) {
         return res.json();
       })
       .then((data) => {
-        setVan(data.van);
+        setVan(data.vans);
         setLoading(false);
       })
       .catch((err) => {

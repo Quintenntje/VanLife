@@ -1,18 +1,11 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import Tag from "../components/Tag";
+import useVan from "../hooks/useVan";
 
 export default function VanDetail() {
   const { id } = useParams();
 
-  const [van, setVan] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch(`/api/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans))
-      .catch((error) => console.error("Error fetching van details:", error));
-  }, [id]);
+  const { van, isLoading, error } = useVan(id);
 
   return (
     <div>
@@ -36,9 +29,12 @@ export default function VanDetail() {
           </div>
         </div>
       ) : (
-        <div className="flex items-center justify-center h-screen">
-          <p className="text-xl text-gray-500">Loading van details...</p>
-        </div>
+        <>
+          {isLoading && (
+            <p className="text-center text-gray-500">Loading van details...</p>
+          )}
+          {error && <p className="text-center text-red-500">Error: {error}</p>}
+        </>
       )}
     </div>
   );
