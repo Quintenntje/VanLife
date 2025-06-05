@@ -1,9 +1,9 @@
 import SubpageTitle from "../../components/titles/SubpageTitle";
 import VanCardSmall from "../../components/VanCardSmall";
-import useVans from "../../hooks/useVans";
+import useHostVans from "../../hooks/useHostVans";
 import { Link } from "react-router-dom";
 export default function HostVans() {
-  const { vans, isLoading, error } = useVans();
+  const { vans, isLoading, error } = useHostVans();
   return (
     <>
       <SubpageTitle>Your listed vans</SubpageTitle>
