@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bgImg from "../assets/images/home-hero.png";
-import Title from "../components/Title";
+import Title from "../components/titles/Title";
 
 export default function Home() {
   return (

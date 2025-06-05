@@ -1,6 +1,6 @@
 import React from "react";
 import VanCard from "../components/VanCard";
-import SubpageTitle from "../components/SubpageTitle";
+import SubpageTitle from "../components/titles/SubpageTitle";
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);

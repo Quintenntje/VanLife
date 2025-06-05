@@ -5,7 +5,6 @@ import bgImg from "../assets/images/about-hero.png";
 export default function About() {
   return (
     <div className="flex flex-col">
-      {/* Hero image */}
       <div className="w-full">
         <img
           src={bgImg}
