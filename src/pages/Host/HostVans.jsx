@@ -1,5 +1,5 @@
 import SubpageTitle from "../../components/titles/SubpageTitle";
-import VanCard from "../../components/VanCard";
+import VanCardSmall from "../../components/VanCardSmall";
 import useVans from "../../hooks/useVans";
 import { Link } from "react-router-dom";
 export default function HostVans() {
@@ -9,10 +9,10 @@ export default function HostVans() {
       <SubpageTitle>Your listed vans</SubpageTitle>
       {isLoading && <p>Loading vans...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
         {vans.map((van) => (
           <Link to={`/host/vans/${van.id}`} key={van.id}>
-            <VanCard key={van.id} van={van} />
+            <VanCardSmall key={van.id} van={van} />
           </Link>
         ))}
       </div>
