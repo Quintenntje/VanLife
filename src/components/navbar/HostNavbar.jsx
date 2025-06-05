@@ -8,6 +8,7 @@ export default function HostNavbar() {
           <NavbarLink to="/host">Dashboard</NavbarLink>
           <NavbarLink to="/host/income">Income</NavbarLink>
           <NavbarLink to="/host/reviews">Reviews</NavbarLink>
+          <NavbarLink to="/host/vans">Vans</NavbarLink>
         </div>
       </nav>
     </header>
