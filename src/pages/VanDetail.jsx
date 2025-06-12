@@ -10,6 +10,11 @@ export default function VanDetail() {
   const { van, isLoading, error } = useVan(id);
   const location = useLocation();
 
+  const search = location.state?.search || location.search || "";
+
+  const searchParams = new URLSearchParams(search);
+  const type = searchParams.get("type");
+
   return (
     <div>
       {van ? (
@@ -18,7 +23,7 @@ export default function VanDetail() {
             to={location.state.search ? `..${location.state.search}` : ".."}
             relative="path"
           >
-            Go back
+            Go back to {type ? type : "all vans"}
           </BackLink>
           <div className="flex flex-col lg:flex-row items-center justify-center p-6 gap-8">
             <img
