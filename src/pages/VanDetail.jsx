@@ -2,17 +2,24 @@ import { useParams } from "react-router-dom";
 import Tag from "../components/Tag";
 import useVan from "../hooks/useVan";
 import BackLink from "../components/BackLink";
+import { useLocation } from "react-router-dom";
 
 export default function VanDetail() {
   const { id } = useParams();
 
   const { van, isLoading, error } = useVan(id);
+  const location = useLocation();
 
   return (
     <div>
       {van ? (
         <>
-          <BackLink to=".." path="relative">Go back </BackLink>
+          <BackLink
+            to={location.state.search ? `..${location.state.search}` : ".."}
+            relative="path"
+          >
+            Go back
+          </BackLink>
           <div className="flex flex-col lg:flex-row items-center justify-center p-6 gap-8">
             <img
               className="rounded-xl w-full max-w-md"
