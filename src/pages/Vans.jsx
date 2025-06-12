@@ -25,13 +25,26 @@ export default function Vans() {
 
       <div className="mb-4">
         <Tag onClick={() => setSearchParams({})}>All</Tag>
-        <Tag onClick={() => setSearchParams({ type: "simple" })}>Simple</Tag>
-        <Tag onClick={() => setSearchParams({ type: "luxury" })}>Luxury</Tag>
-        <Tag onClick={() => setSearchParams({ type: "rugged" })}>Rugged</Tag>
+        <Tag
+          isActive={typeFilter === "simple"}
+          onClick={() => setSearchParams({ type: "simple" })}
+        >
+          Simple
+        </Tag>
+        <Tag
+          isActive={typeFilter === "luxury"}
+          onClick={() => setSearchParams({ type: "luxury" })}
+        >
+          Luxury
+        </Tag>
+        <Tag
+          isActive={typeFilter === "rugged"}
+          onClick={() => setSearchParams({ type: "rugged" })}
+        >
+          Rugged
+        </Tag>
         {typeFilter && (
-          <Tag onClick={() => setSearchParams({})}>
-            Clear filter
-          </Tag>
+          <Tag onClick={() => setSearchParams({})}>Clear filter</Tag>
         )}
       </div>
 
