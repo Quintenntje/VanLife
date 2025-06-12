@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Tag from "../components/Tag";
 import useVan from "../hooks/useVan";
+import BackLink from "../components/BackLink";
 
 export default function VanDetail() {
   const { id } = useParams();
@@ -11,6 +12,9 @@ export default function VanDetail() {
     <div>
       {van ? (
         <div className="flex flex-col lg:flex-row items-center justify-center p-6 gap-8">
+          <BackLink to=".." relative="path">
+            Back to all vans
+          </BackLink>
           <img
             className="rounded-xl w-full max-w-md"
             src={van.imageUrl}
