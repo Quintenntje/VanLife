@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Vans from "./pages/Vans";
 import VanDetail from "./pages/VanDetail";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
+          <Route path="/login" element={<Login />} />
 
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
