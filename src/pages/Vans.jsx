@@ -1,12 +1,20 @@
 import VanCard from "../components/VanCard";
 import SubpageTitle from "../components/titles/SubpageTitle";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import useVans from "../hooks/useVans";
+import Tag from "../components/Tag";
 
 export default function Vans() {
   const { vans, isLoading, error } = useVans();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const vanElements = vans.map((van) => (
+  const typeFilter = searchParams.get("type");
+
+  const vansToDisplay = typeFilter
+    ? vans.filter((van) => van.type === typeFilter || typeFilter === "all")
+    : vans;
+
+  const vanElements = vansToDisplay.map((van) => (
     <Link to={`/vans/${van.id}`}>
       <VanCard key={van.id} van={van} />
     </Link>
@@ -14,6 +22,13 @@ export default function Vans() {
   return (
     <>
       <SubpageTitle>Explore our van options</SubpageTitle>
+
+      <div className="mb-4">
+        <Tag onClick={() => setSearchParams({ type: "all" })}>All</Tag>
+        <Tag onClick={() => setSearchParams({ type: "simple" })}>Simple</Tag>
+        <Tag onClick={() => setSearchParams({ type: "luxury" })}>Luxury</Tag>
+        <Tag onClick={() => setSearchParams({ type: "rugged" })}>Rugged</Tag>
+      </div>
 
       {isLoading && <p>Loading vans...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}

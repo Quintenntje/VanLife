@@ -1,6 +1,6 @@
-export default function Tag({ children, isActive }) {
+export default function Tag({ children, isActive, onClick }) {
   const defaultClasses =
-    "inline-flex items-center rounded-lg px-3 py-1 text-lg font-medium";
+    "inline-flex items-center rounded-lg px-3 py-1 text-lg font-medium ";
 
   let activeClass = "";
   const tagClass = (() => {
@@ -20,7 +20,7 @@ export default function Tag({ children, isActive }) {
   })();
 
   return (
-    <span className={`${defaultClasses} ${tagClass} ${activeClass}`}>
+    <span onClick={onClick} className={`${defaultClasses} ${tagClass} ${activeClass}`}>
       {children}
     </span>
   );
