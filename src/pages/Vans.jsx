@@ -19,32 +19,32 @@ export default function Vans() {
       <VanCard key={van.id} van={van} />
     </Link>
   ));
+
+  const filters = vans.map((van) => van.type);
+  const uniqueFilters = [...new Set(filters)];
+
+  const filterTags = uniqueFilters.map((type) => (
+    <Tag
+      key={type}
+      isActive={typeFilter === type}
+      onClick={() => setSearchParams({ type })}
+    >
+      {type}
+    </Tag>
+  ));
+
   return (
     <>
       <SubpageTitle>Explore our van options</SubpageTitle>
 
       <div className="mb-4">
         <Tag onClick={() => setSearchParams({})}>All</Tag>
-        <Tag
-          isActive={typeFilter === "simple"}
-          onClick={() => setSearchParams({ type: "simple" })}
-        >
-          Simple
-        </Tag>
-        <Tag
-          isActive={typeFilter === "luxury"}
-          onClick={() => setSearchParams({ type: "luxury" })}
-        >
-          Luxury
-        </Tag>
-        <Tag
-          isActive={typeFilter === "rugged"}
-          onClick={() => setSearchParams({ type: "rugged" })}
-        >
-          Rugged
-        </Tag>
+        {filterTags}
+
         {typeFilter && (
-          <Tag onClick={() => setSearchParams({})}>Clear filter</Tag>
+          <Tag isActive={true} onClick={() => setSearchParams({})}>
+            Clear Filters
+          </Tag>
         )}
       </div>
 
