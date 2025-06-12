@@ -11,7 +11,7 @@ export default function Vans() {
   const typeFilter = searchParams.get("type");
 
   const vansToDisplay = typeFilter
-    ? vans.filter((van) => van.type === typeFilter || typeFilter === "all")
+    ? vans.filter((van) => van.type === typeFilter)
     : vans;
 
   const vanElements = vansToDisplay.map((van) => (
@@ -24,10 +24,15 @@ export default function Vans() {
       <SubpageTitle>Explore our van options</SubpageTitle>
 
       <div className="mb-4">
-        <Tag onClick={() => setSearchParams({ type: "all" })}>All</Tag>
+        <Tag onClick={() => setSearchParams({})}>All</Tag>
         <Tag onClick={() => setSearchParams({ type: "simple" })}>Simple</Tag>
         <Tag onClick={() => setSearchParams({ type: "luxury" })}>Luxury</Tag>
         <Tag onClick={() => setSearchParams({ type: "rugged" })}>Rugged</Tag>
+        {typeFilter && (
+          <Tag onClick={() => setSearchParams({})}>
+            Clear filter
+          </Tag>
+        )}
       </div>
 
       {isLoading && <p>Loading vans...</p>}
